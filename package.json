@@ -1,0 +1,65 @@
+{
+  "name": "activity-mp",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev:mp-weixin": "cross-env NODE_ENV=development UNI_PLATFORM=mp-weixin vue-cli-service uni-build --watch",
+    "dev:h5": "cross-env NODE_ENV=development UNI_PLATFORM=h5 vue-cli-service uni-serve",
+    "build:mp-weixin": "cross-env NODE_ENV=production UNI_PLATFORM=mp-weixin UNI_OUTPUT_DIR=dist/dev/mp-weixin vue-cli-service uni-build"
+  },
+  "dependencies": {
+    "@dcloudio/uni-mp-weixin": "^2.0.0-27920200527001",
+    "@dcloudio/uni-h5": "^2.0.0-27920200527001",
+    "@dcloudio/uni-stat": "^2.0.0-27920200527001",
+    "core-js": "^3.6.5",
+    "flyio": "^0.6.2",
+    "install": "^0.13.0",
+    "npm": "^6.14.10",
+    "regenerator-runtime": "^0.12.1",
+    "vue": "^2.6.11",
+    "vuex": "^3.2.0"
+  },
+  "devDependencies": {
+    "@dcloudio/types": "*",
+    "@dcloudio/uni-automator": "^2.0.0-27920200527001",
+    "@dcloudio/uni-cli-shared": "^2.0.0-27920200527001",
+    "@dcloudio/uni-migration": "^2.0.0-27920200527001",
+    "@dcloudio/uni-template-compiler": "^2.0.0-27920200527001",
+    "@dcloudio/vue-cli-plugin-hbuilderx": "^2.0.0-27920200527001",
+    "@dcloudio/vue-cli-plugin-uni": "^2.0.0-27920200527001",
+    "@dcloudio/vue-cli-plugin-uni-optimize": "^2.0.0-27920200527001",
+    "@dcloudio/webpack-uni-mp-loader": "^2.0.0-27920200527001",
+    "@dcloudio/webpack-uni-pages-loader": "^2.0.0-27920200527001",
+    "@vue/cli-plugin-babel": "~4.4.0",
+    "@vue/cli-service": "~4.4.0",
+    "babel-eslint": "^8.2.0",
+    "babel-plugin-import": "^1.11.0",
+    "cross-env": "^7.0.2",
+    "eslint": "^4.19.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-friendly-formatter": "^4.0.0",
+    "eslint-import-resolver-webpack": "^0.9.0",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-html": "^4.0.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-node": "^6.0.0",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-standard": "^3.0.0",
+    "jest": "^25.4.0",
+    "mini-types": "*",
+    "miniprogram-api-typings": "*",
+    "node-sass": "^4.14.1",
+    "postcss-comment": "^2.0.0",
+    "sass-loader": "^7.3.1",
+    "sass-resources-loader": "^2.1.1",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "browserslist": [
+    "Android >= 4",
+    "ios >= 8"
+  ],
+  "uni-app": {
+    "scripts": {}
+  }
+}

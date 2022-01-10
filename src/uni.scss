@@ -1,0 +1,411 @@
+// 样式重置
+$color: #FF7321;
+$bgColor: linear-gradient(270deg, #FF701D 0%, #F9AD82 100%);
+$black: #1b1d20;
+$border: #edf0f5;
+$orange: #FF7321;
+$bg: #f7f8f9;
+$green: #03B349;
+$yellow: #ffbc0d;
+$red: #db0007;
+/* start--Retina 屏幕下的 1px 边框--start */
+header, nav, div, ul, li, span, i, a,
+h1, h2, h3, h4, h5, h6, p, article, footer,
+textarea, label, button, section {
+  box-sizing: border-box;
+}
+.border,
+.border-b,
+.border-l,
+.border-r,
+.border-t,
+.border-tb {
+  position: relative
+}
+.border-b:after,
+.border-l:after,
+.border-r:after,
+.border-tb:after,
+.border-t:after,
+.border:after {
+  /* #ifndef APP-NVUE */
+  content: ' ';
+  /* #endif */
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  box-sizing: border-box;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  // 多加0.1%，能解决有时候边框缺失的问题
+  width: 200%;
+  height: 200%;
+  transform: scale(0.5, 0.5);
+  border: 0 solid $border;
+  z-index: 1;
+}
+
+.border-t:after {
+  border-top-width: 1px;
+}
+
+.border-l:after {
+  border-left-width: 1px;
+}
+
+.border-r:after {
+  border-right-width: 1px;
+}
+
+.border-b:after {
+  border-bottom-width: 1px;
+}
+
+.border-tb:after {
+  border-width: 1px 0;
+}
+
+.border:after {
+  border-width: 1px;
+}
+/* end--Retina 屏幕下的 1px 边框--end */
+page{
+  background: #F4F4F4;
+}
+*[hidden] {
+  display: none;
+}
+.transparent {
+  opacity: 0;
+}
+.y-center{
+  display: flex;
+  align-items: center;
+}
+.x-center{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.xy-center{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.fixed-center{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.number {
+  line-height: 1;
+  font-family: 'DIN Alternate';
+  font-weight: bold;
+}
+.bgClip {
+  background: $bgColor;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.absolute{
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+}
+a{
+  border-radius: 4rpx;
+  width: fit-content;
+}
+*, div{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+*[flex]{
+  display: flex;
+}
+li{
+  list-style: none;
+}
+i{
+  font-style: normal;
+}
+[o-fb]{
+  &:active{
+    opacity: .7;
+  }
+}
+image{
+  object-fit: cover;
+}
+
+// 限制行数
+@mixin line($lineNum) {
+  overflow: hidden;
+  -webkit-line-clamp: $lineNum;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space: normal !important;
+  -webkit-box-orient: vertical;
+}
+.one-line{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+// 加载中图标
+@keyframes rotating{
+  0%{transform:rotate(0deg)}
+  to{transform:rotate(1turn)}
+}
+@mixin loadingIcon($color: #ddd, $size: 42rpx){
+  content: '';
+  display: inline-block;
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  border: 1.5px solid $color;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  position: absolute;
+  left: calc(50% - calc($size / 2));
+  top: calc(50% - calc($size / 2));
+  z-index: 1;
+  animation: rotating .7s linear infinite;
+}
+.whiteShadow {
+  position: relative;
+  &::after {
+    display: inline-block;
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 40rpx;
+    height: 50rpx;
+    background: linear-gradient(270deg, #fff, #fff 20%, hsla(0,0%,98%,0));
+  }
+}
+button{
+  overflow: hidden;
+  position: relative;
+  border: 0;
+  border-radius:6rpx;
+  font-size:30rpx;
+  color:#ffffff;
+  outline: 0;
+  padding: 0;
+  line-height: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  &::after{
+    display: none;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    border-radius:6rpx;
+    background: rgba(0, 0, 0, 0.15);
+  }
+  &:active::after {
+    display: inline-block;
+  }
+  &[disabled]{
+    opacity: .6;
+    color: #fff;
+    background: $bgColor;
+  }
+  &[disabled]:active:after{
+    display: none;
+  }
+  &.opacity{
+    width: fit-content;
+    height: fit-content;
+    background: transparent;
+    &:active:after{
+      display: none;
+    }
+  }
+}
+uni-button[loading]:before{
+  margin-right: 4rpx;
+  width: 20px;
+  height: 20px;
+}
+
+.uni-actionsheet__menu,.uni-actionsheet__action{
+  background: $black!important;
+  .uni-actionsheet__cell{
+    color: #bbb!important;
+    font-size: 30rpx!important;
+  }
+}
+.uni-actionsheet .uni-actionsheet__cell:before{
+  border-color: rgba(0, 0, 0, 0.6)!important;
+}
+.bottomBtn{
+  // 高140rpx
+  position: fixed;
+  background: #fff;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  padding: 40rpx 30rpx;
+  display: flex;
+  justify-content: center;
+  z-index: 5;
+  @extend .border-t;
+  button{
+    width: 100%;
+    background: $bgColor;
+    border-radius: 16rpx;
+    height: 80rpx;
+    font-size: 30rpx;
+    color: #fff;
+    &[disabled]{
+      background: $bgColor;
+      color: #fff;
+      opacity: .6;
+    }
+  }
+}
+.mask{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 10;
+  transition: all ease .3s;
+  visibility: hidden;
+  &.showMask{
+    visibility: visible;
+    opacity: 1;
+  }
+}
+// tabBar上边框
+.tabBorder::before{
+  display: inline-block;
+  content: '';
+  position: fixed;
+  left: 0;
+  bottom: var(--window-bottom);
+  width: 100%;
+  height: 1rpx;
+  box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+}
+// ---------- 过渡 ----------
+.fade-enter,
+.fade-leave-active {
+  opacity: 0;
+}
+.fade-enter-active {
+  transition: opacity .3s;
+}
+
+
+.sketcionAnimation {
+  @keyframes van-skeleton-blink {
+    50% {
+      opacity: 0.6;
+    }
+  }
+  animation: van-skeleton-blink 1.2s ease-in-out infinite;
+}
+// 局部
+// 点赞特效
+@keyframes upFade {
+  0% {
+    opacity: 0;
+    margin-top: 0;
+  }
+  60% {
+    opacity: 1;
+    margin-top: -35rpx;
+  }
+  80% {
+    opacity: .5;
+    margin-top: -35rpx;
+  }
+  100% {
+    opacity: 0;
+    margin-top: -35rpx;
+  }
+}
+.goods{
+  position: relative;
+  &::after{
+    color: $color;
+    top: 0;
+    content: '+1';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: 0;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    animation: upFade .8s ease-in-out;
+  }
+}
+
+// 项目通用
+.commonTitle {
+  background: #fff;
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #333;
+  position: relative;
+  padding: 30rpx 30rpx 0;
+  line-height: 1;
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 30rpx;
+    width: 56rpx;
+    height: 12rpx;
+    background: linear-gradient(90deg, #FFAB80 0%, #FF7828 100%);
+    opacity: 0.59;
+  }
+}
+.btnTabs {
+  padding: 30rpx 30rpx 0;
+  @extend .y-center;
+  button {
+    font-size: 28rpx;
+    color: #666666;
+    flex: 1;
+    height: 72rpx;
+    border: 1px solid #E6E6E6;
+    border-radius: 100rpx;
+    background: #fff;
+    &.active {
+      color: #fff;
+      background: $bgColor;
+    }
+    & + button {
+      margin-left: 15rpx;
+    }
+  }
+}

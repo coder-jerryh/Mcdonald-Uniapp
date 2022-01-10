@@ -1,0 +1,137 @@
+@font-face {
+  font-family: 'iconfont';  /* Project id 2526087 */
+  src: url('//at.alicdn.com/t/font_2526087_alc8m4xxidw.ttf?t=1620111928496') format('truetype');
+}
+.iconfont,.select {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-reduce:before {
+  content: "\e768";
+}
+.icon-search:before {
+  content: "\e65d";
+}
+.icon-tuijian:before {
+  content: "\e629";
+}
+.icon-tuijian1:before {
+  content: "\e60f";
+}
+.icon-camera:before {
+  content: "\e664";
+}
+.icon-you:before {
+  content: "\e62d";
+}
+.icon-left:before {
+  content: "\e7c8";
+}
+.icon-play:before {
+  content: "\e66e";
+}
+.icon-close:before {
+  content: "\e646";
+}
+.icon-add:before {
+  content: "\e767";
+}
+.icon-radio:before {
+  content: "\e6d7";
+}
+.icon-radios:before {
+  content: "\e656";
+}
+.icon-link:before{
+  content: "\e62e";
+}
+.icon-fill-close::before{
+  content: '\e658';
+}
+.icon-more::before{
+  content: '\e610';
+}
+.icon-scan::before{
+  content: '\e689';
+}
+.icon-checkboxs::before{
+  content: '\e6d4';
+}
+.icon-checkbox::before{
+  content: '\e6d5';
+}
+.icon-edit::before{
+  content: '\e6aa';
+}
+.icon-gift::before{
+  content: '\e632';
+}
+.icon-cup::before{
+  content: '\e6bd';
+}
+.icon-top::before{
+  content: '\e69e';
+}
+.icon-brand::before{
+  content: '\e63a';
+}
+.icon-wx::before{
+  content: '\e65c';
+}
+.icon-on-star::before{
+  content: '\e61d';
+}
+.icon-off-star::before{
+  content: '\e61e';
+}
+.icon-half-star::before{
+  content: '\e627';
+}
+.icon-round-add::before{
+  content: '\e6d9';
+}
+.icon-video::before{
+  content: '\e7c7';
+}
+.icon-tuijian::before{
+  content: '\e629';
+}
+.icon-round-close::before{
+  content: '\e7a7';
+}
+.icon-delete::before{
+  content: '\e6b4';
+}
+.icon-find::before{
+  content: '\e80a';
+}
+.icon-time::before{
+  content: '\e65e';
+}
+.icon-mobile::before{
+  content: '\e6a0';
+}
+.icon-mobile::before{
+  content: '\e6a0';
+}
+.icon-copy::before{
+  content: '\e690';
+}
+.icon-creative::before{
+  content: '\e719';
+}
+.icon-good::before{
+  content: '\e778';
+}
+.icon-xia::before{
+  content: '\e80b';
+}
+.icon-shang::before{
+  content: '\e80c';
+}
+.icon-right::before{
+  content: '\e645';
+}
